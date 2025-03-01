@@ -7,7 +7,7 @@
 /* ======= BASE STYLES ======= */
 :root {
     --primary: #3b82f6;
-    --primary-dark: #003ad9;
+    --primary-dark: #1442be;
     --primary-light: #3b82f6;
     --secondary: #6b7280;
     --success: #10b981;
@@ -149,6 +149,9 @@ img {
 .navbar {
     padding: 1rem 0;
     transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    font-size: small;
+    
 }
 
 .navbar-dark {
@@ -280,9 +283,13 @@ img {
 
 /* ======= SECTORS SECTION ======= */
 #sectors {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 0rem;
 
+}
+
+.mb-0 {
+    font-size: smaller;
 }
 
 
@@ -320,7 +327,7 @@ img {
 
 /* ======= FEATURED EXPERTS ======= */
 #experts{
-    padding-top: 5rem;
+    padding-top: 1.5rem;
     padding-bottom: 3rem;
    
 }
@@ -368,6 +375,8 @@ img {
     font-size: 1.5rem;
 }
 
+
+
 @media (max-width: 480px) {
     .featured-experts-heading {
         font-size: 2.5rem !important;
@@ -379,6 +388,7 @@ img {
         font-size: 3.5rem !important;
     }
 }
+
 
 
 /* ======= VALUE PROPOSITIONS ======= */
@@ -466,6 +476,19 @@ img {
 
 /* ======= SECTOR-SPECIFIC CTAs ======= */
 .cta-card {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+.healthcare-cta { background: #2d88ff; }
+.legal-cta { background: #d9534f; }
+.education-cta { background: #5cb85c; }
+.finance-cta { background: #f0ad4e; }
+.technology-cta { background: #0275d8; }
+.entrepreneurship-cta { background: #7952b3; }
+
+
+.cta-card {
     height: 250px;
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -521,8 +544,15 @@ img {
 }
 
 /* ======= TESTIMONIALS ======= */
+
+#testimonials {
+    padding-top: 6rem;
+    /* padding-bottom: 6rem; */
+}
+
 .testimonial-slider {
-    padding-bottom: 3rem;
+    padding-bottom: 10rem;
+    
 }
 
 .testimonial-card {
@@ -535,7 +565,7 @@ img {
 }
 
 .testimonial-card .card-body {
-    padding: 2rem;
+    padding: 4rem;
 }
 
 .testimonial-card p {
@@ -554,6 +584,8 @@ img {
     color: var(--primary-light);
     opacity: 0.5;
 }
+
+
 
 /* ======= BLOG SECTION ======= */
 .blog-card {
