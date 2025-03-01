@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XpertLink - Nepal's Premier Expert Network</title>
+
+    <!-- Required Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+
+    <style>
+        /* Custom CSS for advanced animations */
+        .hover-3d {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hover-3d:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- Animated Navigation -->
+    <!-- Updated Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" data-aos="fade-down">
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold" href="#">
+                <i class="fa-solid fa-handshake-angle me-2"></i>XpertLink
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="sectorsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Sectors
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="sectorsDropdown">
+                            <li><a class="dropdown-item" href="#healthcare">
+                                    <i class="fa-solid fa-heart-pulse me-2"></i>Healthcare
+                                </a></li>
+                            <li><a class="dropdown-item" href="#legal">
+                                    <i class="fa-solid fa-scale-balanced me-2"></i>Legal
+                                </a></li>
+                            <li><a class="dropdown-item" href="#education">
+                                    <i class="fa-solid fa-book me-2"></i>Education
+                                </a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#sectors">
+                                    <i class="fa-solid fa-industry me-2"></i>All Sectors
+                                </a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sectors">Sectors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experts">Experts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-outline-light btn-sm mt-1" href="#login">
+                            <i class="fa-solid fa-arrow-right-to-bracket me-1"></i>Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Interactive Hero Section -->
+    <section class="hero vh-100 d-flex align-items-center position-relative">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10" data-aos="zoom-in">
+                    <h1 class="display-3 fw-bold mb-4 text-white">
+                        Nepal's Premier Expert Network Platform
+                    </h1>
+                    <div class="search-bar bg-white p-3 rounded-3 shadow-lg">
+                        <form class="d-flex gap-2">
+                            <input type="text" class="form-control form-control-lg"
+                                placeholder="Search experts by sector, expertise, or location">
+                            <button class="btn btn-primary btn-lg px-4">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <video autoplay muted loop class="hero-video">
+            <source src="./assets/videos/hero-bg.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- Sector Overview Section -->
+    <section class="sectors py-7 bg-white">
+        <div class="container">
+            <div class="row mb-5" data-aos="fade-up">
+                <div class="col-12 text-center " id="sectors">
+                    <h2 class="display-5 fw-bold mb-3  ">Key Service Sectors</h2>
+                    <p class="lead text-muted">Connecting you with verified professionals across Nepal's key industries
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sector Tabs -->
+            <div class="row" data-aos="fade-up">
+                <div class="col-12">
+                    <ul class="nav nav-pills justify-content-center mb-5" id="sectorTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="pill" href="#healthcare">
+                                <i class="fa-solid fa-heart-pulse me-2"></i>Healthcare
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" href="#legal">
+                                <i class="fa-solid fa-scale-balanced me-2"></i>Legal Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" href="#education">
+                                <i class="fa-solid fa-book me-2"></i>Education
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" href="#finance">
+                                <i class="fa-solid fa-coins me-2"></i>Finance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" href="#technology">
+                                <i class="fa-solid fa-laptop-code me-2"></i>Technology
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="pill" href="#entrepreneurship">
+                                <i class="fa-solid fa-lightbulb me-2"></i>Entrepreneurship
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <!-- Healthcare Sector Content -->
+                        <div class="tab-pane fade show active" id="healthcare">
+                            <div class="row g-4">
+                                <!-- Medical Experts -->
+                                <div class="col-lg-4">
+                                    <div class="card hover-3d h-100 border-0 shadow">
+                                        <div class="card-body">
+                                            <h3 class="h4 fw-bold mb-3">
+                                                <i class="fa-solid fa-user-doctor text-primary me-2"></i>
+                                                Healthcare Experts
+                                            </h3>
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-heartbeat text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Cardiologists</h6>
+                                                        <small class="text-muted">15+ Leading Specialists</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-brain text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Neurologists</h6>
+                                                        <small class="text-muted">10+ Renowned Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-dna text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Oncologists</h6>
+                                                        <small class="text-muted">8+ Trusted Specialists</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-baby text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Pediatricians</h6>
+                                                        <small class="text-muted">20+ Experienced Doctors</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-teeth-open text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Dentists</h6>
+                                                        <small class="text-muted">25+ Skilled Professionals</small>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Healthcare Achievements -->
+                                <div class="col-lg-8">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="card bg-primary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">200+</h3>
+                                                    <p class="mb-0">Accredited Healthcare Specialists</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-success text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">50+</h3>
+                                                    <p class="mb-0">Advanced Medical Departments</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-danger text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">10,000+</h3>
+                                                    <p class="mb-0">Successful Medical Procedures</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-warning text-dark hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">500,000+</h3>
+                                                    <p class="mb-0">Patients Successfully Treated</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-info text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">1,200+</h3>
+                                                    <p class="mb-0">State-of-the-Art Medical Devices</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-secondary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">95%</h3>
+                                                    <p class="mb-0">Overall Patient Satisfaction</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Legal Sector Content -->
+                        <div class="tab-pane fade show active" id="legal">
+                            <div class="row g-4">
+                                <!-- Legal Specialists -->
+                                <div class="col-lg-4">
+                                    <div class="card hover-3d h-100 border-0 shadow">
+                                        <div class="card-body">
+                                            <h3 class="h4 fw-bold mb-3">
+                                                <i class="fa-solid fa-scale-balanced text-primary me-2"></i>
+                                                Legal Specialists
+                                            </h3>
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-gavel text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Criminal Lawyers</h6>
+                                                        <small class="text-muted">20+ Experienced Attorneys</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-briefcase text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Corporate Lawyers</h6>
+                                                        <small class="text-muted">15+ Business Law Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-house text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Real Estate Lawyers</h6>
+                                                        <small class="text-muted">12+ Property Law Specialists</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-heart text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Family Lawyers</h6>
+                                                        <small class="text-muted">18+ Divorce & Custody Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-file-contract text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Contract Lawyers</h6>
+                                                        <small class="text-muted">22+ Legal Documentation
+                                                            Experts</small>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Legal Statistics -->
+                                <div class="col-lg-8">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="card bg-primary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">500+</h3>
+                                                    <p class="mb-0">Qualified Legal Professionals</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-success text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">100+</h3>
+                                                    <p class="mb-0">Specialized Legal Fields</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-danger text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">20,000+</h3>
+                                                    <p class="mb-0">Cases Successfully Resolved</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-warning text-dark hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">1 Million+</h3>
+                                                    <p class="mb-0">Clients Served</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-info text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">95%</h3>
+                                                    <p class="mb-0">Successful Case Resolution Rate</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-secondary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">50+</h3>
+                                                    <p class="mb-0">Top-Ranked Law Firms Affiliated</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Education Sector Content -->
+                        <div class="tab-pane fade show active" id="education">
+                            <div class="row g-4">
+                                <!-- Educational Institutions -->
+                                <div class="col-lg-4">
+                                    <div class="card hover-3d h-100 border-0 shadow">
+                                        <div class="card-body">
+                                            <h3 class="h4 fw-bold mb-3">
+                                                <i class="fa-solid fa-graduation-cap text-primary me-2"></i>
+                                                Educational Institutions
+                                            </h3>
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-school text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Universities</h6>
+                                                        <small class="text-muted">50+ Accredited Institutions</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-book-open text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Colleges</h6>
+                                                        <small class="text-muted">100+ Recognized Colleges</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-chalkboard-teacher text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Schools</h6>
+                                                        <small class="text-muted">500+ Primary & Secondary
+                                                            Schools</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-laptop-code text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Online Learning Platforms</h6>
+                                                        <small class="text-muted">30+ E-Learning Providers</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-user-graduate text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Vocational Training Centers</h6>
+                                                        <small class="text-muted">20+ Skill Development Programs</small>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Education Statistics -->
+                                <div class="col-lg-8">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="card bg-primary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">1M+</h3>
+                                                    <p class="mb-0">Students Enrolled</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-success text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">50,000+</h3>
+                                                    <p class="mb-0">Qualified Teachers & Professors</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-danger text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">95%</h3>
+                                                    <p class="mb-0">Graduation Success Rate</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-warning text-dark hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">200,000+</h3>
+                                                    <p class="mb-0">Scholarships Awarded</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-info text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">5,000+</h3>
+                                                    <p class="mb-0">Research Publications Annually</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-secondary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">90%</h3>
+                                                    <p class="mb-0">Employment Rate After Graduation</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Finance Sector Content -->
+                        <div class="tab-pane fade show active" id="finance">
+                            <div class="row g-4">
+                                <!-- Financial Experts -->
+                                <div class="col-lg-4">
+                                    <div class="card hover-3d h-100 border-0 shadow">
+                                        <div class="card-body">
+                                            <h3 class="h4 fw-bold mb-3">
+                                                <i class="fa-solid fa-landmark text-primary me-2"></i>
+                                                Financial Experts
+                                            </h3>
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-chart-line text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Investment Analysts</h6>
+                                                        <small class="text-muted">20+ Certified Professionals</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-piggy-bank text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Financial Planners</h6>
+                                                        <small class="text-muted">15+ Accredited Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-coins text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Tax Consultants</h6>
+                                                        <small class="text-muted">12+ Certified Professionals</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-building-columns text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Wealth Managers</h6>
+                                                        <small class="text-muted">10+ Industry Leaders</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-hand-holding-dollar text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Loan Advisors</h6>
+                                                        <small class="text-muted">18+ Trusted Experts</small>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Financial Statistics -->
+                                <div class="col-lg-8">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="card bg-primary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">$1B+</h3>
+                                                    <p class="mb-0">Assets Under Management</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-success text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">500+</h3>
+                                                    <p class="mb-0">Corporate Clients Served</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-danger text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">5,000+</h3>
+                                                    <p class="mb-0">Personal Investment Plans Created</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-warning text-dark hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">98%</h3>
+                                                    <p class="mb-0">Client Retention Rate</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-info text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">1,000+</h3>
+                                                    <p class="mb-0">Successful Loan Approvals</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-secondary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">150+</h3>
+                                                    <p class="mb-0">Industry Awards & Recognitions</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Technology Sector Content -->
+                        <div class="tab-pane fade show active" id="technology">
+                            <div class="row g-4">
+                                <!-- Technology Specialists -->
+                                <div class="col-lg-4">
+                                    <div class="card hover-3d h-100 border-0 shadow">
+                                        <div class="card-body">
+                                            <h3 class="h4 fw-bold mb-3">
+                                                <i class="fa-solid fa-microchip text-primary me-2"></i>
+                                                Technology Experts
+                                            </h3>
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-code text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Software Engineers</h6>
+                                                        <small class="text-muted">50+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-database text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Data Scientists</h6>
+                                                        <small class="text-muted">30+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-shield-halved text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Cybersecurity Analysts</h6>
+                                                        <small class="text-muted">20+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-network-wired text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Network Engineers</h6>
+                                                        <small class="text-muted">25+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-robot text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">AI/ML Specialists</h6>
+                                                        <small class="text-muted">15+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Technology Statistics -->
+                                <div class="col-lg-8">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="card bg-primary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">500+</h3>
+                                                    <p class="mb-0">Certified IT Professionals</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-success text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">100+</h3>
+                                                    <p class="mb-0">Innovative Tech Startups</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-danger text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">1,000+</h3>
+                                                    <p class="mb-0">Successful IT Projects</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-warning text-dark hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">5M+</h3>
+                                                    <p class="mb-0">Users Served by Our Technology</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-info text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">2,000+</h3>
+                                                    <p class="mb-0">Patents & Tech Innovations</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-secondary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">98%</h3>
+                                                    <p class="mb-0">Customer Satisfaction Rate</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Entrepreneurship Sector Content -->
+                        <div class="tab-pane fade show active" id="entrepreneurship">
+                            <div class="row g-4">
+                                <!-- Business Experts -->
+                                <div class="col-lg-4">
+                                    <div class="card hover-3d h-100 border-0 shadow">
+                                        <div class="card-body">
+                                            <h3 class="h4 fw-bold mb-3">
+                                                <i class="fa-solid fa-briefcase text-primary me-2"></i>
+                                                Business Experts
+                                            </h3>
+                                            <ul class="list-unstyled">
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-lightbulb text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Startup Consultants</h6>
+                                                        <small class="text-muted">20+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-chart-line text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Business Strategists</h6>
+                                                        <small class="text-muted">15+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-sack-dollar text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Investment Advisors</h6>
+                                                        <small class="text-muted">10+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-shop text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">E-commerce Specialists</h6>
+                                                        <small class="text-muted">18+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mb-3">
+                                                    <i class="fa-solid fa-users text-muted me-2"></i>
+                                                    <div>
+                                                        <h6 class="mb-0">Marketing & Branding Experts</h6>
+                                                        <small class="text-muted">25+ Verified Experts</small>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Entrepreneurship Statistics -->
+                                <div class="col-lg-8">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="card bg-primary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">500+</h3>
+                                                    <p class="mb-0">Successful Startups Launched</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-success text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">100+</h3>
+                                                    <p class="mb-0">Industry-Specific Business Mentors</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-danger text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">$50M+</h3>
+                                                    <p class="mb-0">Total Funding Raised</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-warning text-dark hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">1,000,000+</h3>
+                                                    <p class="mb-0">Customers Served by Startups</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-info text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">500+</h3>
+                                                    <p class="mb-0">Networking & Investment Events Hosted</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card bg-secondary text-white hover-3d h-100">
+                                                <div class="card-body">
+                                                    <h3 class="h2 fw-bold">90%</h3>
+                                                    <p class="mb-0">Success Rate of Business Incubation Programs</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Experts Carousel -->
+    <section class="py-7 bg-gradient-primary" id="experts">
+        <div class="container">
+            <div class="row mb-5" data-aos="fade-up">
+                <div class="col-12 text-center">
+                    <h2 class="display-4 display-md-3 display-lg-5 fw-bold text-white text-center py-3" >Featured Experts
+                    </h2>
+                </div>
+            </div>
+            <div class="swiper featured-experts">
+                <div class="swiper-wrapper">
+                    <!-- Expert Slides -->
+                    <!-- Healthcare Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/1.jpg" class="card-img-top" alt="Dr. Rajesh">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Dr. Rajesh Thapa</h5>
+                                <p class="text-muted small mb-2">Senior Cardiologist</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (128 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/2.jpg" class="card-img-top" alt="Dr. Neha">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Dr. Neha Sharma</h5>
+                                <p class="text-muted small mb-2">Leading Pediatrician</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.8 (112 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legal Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/3.jpg" class="card-img-top" alt="Advocate Anand">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Advocate Anand Mehta</h5>
+                                <p class="text-muted small mb-2">Corporate Lawyer</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.7 (95 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/4.jpg" class="card-img-top" alt="Judge Kavita">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Judge Kavita Rao</h5>
+                                <p class="text-muted small mb-2">Human Rights Specialist</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (110 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/5.jpg" class="card-img-top" alt="Prof. Arjun">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Prof. Arjun Khanna</h5>
+                                <p class="text-muted small mb-2">Education Policy Expert</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.8 (89 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Finance Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/6.jpg" class="card-img-top" alt="CA Sumit">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">CA Sumit Agarwal</h5>
+                                <p class="text-muted small mb-2">Taxation & Audit Consultant</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (132 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/7.jpg" class="card-img-top" alt="Fintech Rina">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Rina Desai</h5>
+                                <p class="text-muted small mb-2">Fintech Investment Strategist</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.7 (120 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technology Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/8.jpg" class="card-img-top" alt="AI Rohit">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Rohit Saxena</h5>
+                                <p class="text-muted small mb-2">AI & Machine Learning Expert</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (140 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entrepreneurship Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/9.jpg" class="card-img-top" alt="Startup Meera">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Meera Kapoor</h5>
+                                <p class="text-muted small mb-2">Startup Growth Mentor</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.8 (110 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/10.jpg" class="card-img-top" alt="Venture Anil">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Anil Deshmukh</h5>
+                                <p class="text-muted small mb-2">Venture Capital Advisor</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (115 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Buttons -->
+
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+    <!-- Sector-Specific Value Propositions -->
+    <section class="py-7">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Healthcare Value Prop -->
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="card bg-white border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="icon-lg bg-danger text-white mb-4">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">Healthcare Solutions</h3>
+                            <ul class="list-unstyled">
+                                <li class="d-flex mb-3">
+                                    <i class="fa-solid fa-check text-success me-2"></i>
+                                    Telemedicine Consultations
+                                </li>
+                                <!-- Additional healthcare features -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat for other sectors with unique icons and features -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Sector Comparison -->
+    <section class="py-7 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <h2 class="display-5 fw-bold text-center mb-5">Sector Overview</h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th>Sector</th>
+                                    <th>Available Experts</th>
+                                    <th>Avg. Response Time</th>
+                                    <th>Services Offered</th>
+                                    <th>Success Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <i class="fa-solid fa-heart-pulse me-2"></i>
+                                        Healthcare
+                                    </td>
+                                    <td>250+</td>
+                                    <td>15 mins</td>
+                                    <td>Consultations, Second Opinions, Treatment Plans</td>
+                                    <td>
+                                        <div class="progress" style="height: 20px;">
+                                            <div class="progress-bar bg-success" style="width: 95%">95%</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Other sectors' data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector-Specific CTAs -->
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" data-aos="flip-left">
+                <div class="cta-card healthcare-cta text-white">
+                    <div class="cta-content">
+                        <h4>Need Medical Advice?</h4>
+                        <p>Connect with certified healthcare professionals</p>
+                        <a href="#" class="btn btn-light">Find Doctors</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other sectors with unique backgrounds -->
+        </div>
+    </div>
+
+    <!-- Expert Statistics Counter -->
+    <section class="py-7 bg-dark text-white">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3">
+                    <div class="counter-item">
+                        <h3 class="display-4 fw-bold" data-count="1500">0</h3>
+                        <p>Registered Experts</p>
+                    </div>
+                </div>
+                <!-- Additional statistics -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-7">
+        <div class="container">
+            <div class="swiper testimonial-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card testimonial-card border-0 shadow">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="./assets/images/users/sophia.jpg" class="avatar me-3">
+                                    <div>
+                                        <h5 class="mb-0">Sophia Gurung</h5>
+                                        <small class="text-muted">Entrepreneur</small>
+                                    </div>
+                                </div>
+                                <p class="mb-0">XpertLink transformed my business strategy...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional testimonials -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-7 bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Latest Insights</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="card blog-card border-0 h-100">
+                        <img src="./assets/images/blog/health-tech.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-primary">Healthcare</span>
+                            <h5 class="mt-3">Advancements in Nepali Healthcare Technology</h5>
+                            <p class="text-muted">Explore how technology is transforming healthcare...</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional blog posts -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h5>About XpertLink</h5>
+                    <p>Nepal's premier expert network connecting professionals...</p>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Sectors</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Healthcare</a></li>
+                        <!-- Other sectors -->
+                    </ul>
+                </div>
+                <!-- Additional footer columns -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="./js/app.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Swiper sliders
+        const featuredExperts = new Swiper('.featured-experts', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                992: { slidesPerView: 3 }
+            }
+        });
+
+        // Animated counters
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('[data-count]');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const countUp = new CountUp.Counter(counter, target);
+                countUp.start();
+            });
+        });
+
+
+        // JavaScript function to show only the selected sector's content and statistics
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all tab elements
+            const sectorTabs = document.querySelectorAll('#sectorTabs .nav-link');
+
+            // Function to show selected sector content
+            function showSelectedSector(sectorId) {
+                // First, hide all sector content
+                const allSectorContents = document.querySelectorAll('.tab-pane');
+                allSectorContents.forEach(content => {
+                    content.classList.remove('show', 'active');
+                });
+
+                // Show only the selected sector content
+                const selectedContent = document.getElementById(sectorId);
+                if (selectedContent) {
+                    selectedContent.classList.add('show', 'active');
+                }
+
+                // Update sector comparison table to show only the selected sector
+                updateSectorComparisonTable(sectorId);
+
+                // Update sector CTAs to show only the selected sector
+                updateSectorCTAs(sectorId);
+
+                // Update sector value propositions to show only the selected sector
+                updateValuePropositions(sectorId);
+            }
+
+            // Function to update sector comparison table
+            function updateSectorComparisonTable(sectorId) {
+                const sectorName = getSectorName(sectorId);
+                const sectorRows = document.querySelectorAll('.table tbody tr');
+
+                sectorRows.forEach(row => {
+                    // Get the sector name from the first cell of the row
+                    const rowSectorName = row.querySelector('td:first-child').textContent.trim();
+
+                    // Check if this row matches the selected sector
+                    if (rowSectorName.includes(sectorName)) {
+                        row.style.display = 'table-row';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            // Function to update sector CTAs
+            function updateSectorCTAs(sectorId) {
+                const ctaCards = document.querySelectorAll('.cta-card');
+
+                ctaCards.forEach(card => {
+                    if (card.classList.contains(`${sectorId}-cta`)) {
+                        card.closest('.col-md-6').style.display = 'block';
+                    } else {
+                        card.closest('.col-md-6').style.display = 'none';
+                    }
+                });
+            }
+
+            // Function to update value propositions
+            function updateValuePropositions(sectorId) {
+                const sectorName = getSectorName(sectorId);
+                const valueProps = document.querySelectorAll('.card h3');
+
+                valueProps.forEach(prop => {
+                    const propText = prop.textContent.trim();
+                    const propCard = prop.closest('.col-lg-4');
+
+                    if (propText.includes(sectorName)) {
+                        propCard.style.display = 'block';
+                    } else {
+                        propCard.style.display = 'none';
+                    }
+                });
+            }
+
+            // Helper function to get sector name from ID
+            function getSectorName(sectorId) {
+                switch (sectorId) {
+                    case 'healthcare':
+                        return 'Healthcare';
+                    case 'legal':
+                        return 'Legal';
+                    case 'education':
+                        return 'Education';
+                    case 'finance':
+                        return 'Finance';
+                    case 'technology':
+                        return 'Technology';
+                    case 'entrepreneurship':
+                        return 'Entrepreneurship';
+                    default:
+                        return '';
+                }
+            }
+
+            // Add click event listeners to tabs
+            sectorTabs.forEach(tab => {
+                tab.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Get the sector ID from the href attribute
+                    const sectorId = this.getAttribute('href').substring(1);
+
+                    // Mark this tab as active and others as inactive
+                    sectorTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Show only the selected sector content
+                    showSelectedSector(sectorId);
+                });
+            });
+
+            // Initialize with the first tab (usually Healthcare)
+            if (sectorTabs.length > 0) {
+                const initialSectorId = sectorTabs[0].getAttribute('href').substring(1);
+                showSelectedSector(initialSectorId);
+            }
+        });
+
+        // Add smooth transitions for content that appears/disappears
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add transition styles
+            const style = document.createElement('style');
+            style.textContent = `
+        .table tbody tr, .col-md-6, .col-lg-4 {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .table tbody tr[style*="display: none"],
+        .col-md-6[style*="display: none"],
+        .col-lg-4[style*="display: none"] {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .table tbody tr[style*="display: table-row"],
+        .col-md-6[style*="display: block"],
+        .col-lg-4[style*="display: block"] {
+            opacity: 1;
+            visibility: visible;
+        }
+    `;
+            document.head.appendChild(style);
+        });
+
+        var swiper = new Swiper(".featured-experts", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },  // 2 slides for medium screens
+                1024: { slidesPerView: 2 }, // 3 slides for larger screens
+                1200: { slidesPerView: 3 }  // 4 slides for biggest screens
+            }
+        });
+    </script>
+
+</body>
+
+</html>
