@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XpertLink - Healthcare Experts</title>
+    <link rel="icon" type="image/x-icon" href="/assets/XpertLink.svg">
+
+    <!-- Required Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+
+    <style>
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(29, 78, 216, 0.8)), url('https://source.unsplash.com/random/1920x1080/?hospital') center/cover;
+            padding: 120px 0 100px;
+            color: white;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 30px;
+        }
+
+        /* Search and Filter */
+        .search-filter-section {
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-filter-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            padding: 20px;
+        }
+
+        .form-control,
+        .form-select {
+            padding: 0.75rem 1.25rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+        }
+
+        .filter-btn {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Doctor Cards */
+        .doctor-card {
+            border-radius: var(--border-radius);
+            border: none;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .doctor-img-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .doctor-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .doctor-card:hover .doctor-img {
+            transform: scale(1.05);
+        }
+
+        .doctor-availability {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(16, 185, 129, 0.9);
+            color: white;
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .doctor-specialty {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .doctor-hospital {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .doctor-stats {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+        .doctor-stat {
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .doctor-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .doctor-action-btn {
+            flex: 1;
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+
+        /* Doctor Detail Modal */
+        .modal-doctor-content {
+            border-radius: 20px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .modal-doctor-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-bottom: none;
+            padding: 1.5rem;
+        }
+
+        .modal-doctor-body {
+            padding: 2rem;
+        }
+
+        .doctor-profile-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-profile-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .doctor-schedule {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .schedule-slot {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .schedule-slot:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .schedule-slot i {
+            margin-right: 6px;
+        }
+
+        .doctor-profile-section {
+            margin-bottom: 20px;
+        }
+
+        .doctor-profile-section h6 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Featured doctors section */
+        .featured-doctors {
+            padding: 40px 0;
+            background-color: #f1f5f9;
+            margin: 40px 0;
+            border-radius: 30px;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Specialties Section */
+        .specialty-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            height: 100%;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+
+        .specialty-card:hover {
+            box-shadow: var(--card-shadow);
+            border-color: var(--primary);
+        }
+
+        .specialty-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .specialty-card:hover .specialty-icon {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 50px 50px 0 0;
+            padding: 60px 0 30px;
+        }
+
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 1.5px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+
+        /* Utils */
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-rating {
+            background-color: var(--warning);
+            color: white;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .hero-section {
+                padding: 100px 0 80px;
+            }
+
+            .doctor-img-container {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-section {
+                padding: 80px 0 60px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .search-filter-section {
+                margin-top: -30px;
+            }
+
+            .doctor-img-container {
+                height: 200px;
+            }
+
+            .footer {
+                border-radius: 30px 30px 0 0;
+                padding: 40px 0 20px;
+            }
+
+            .specialty-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Animation */
+        .animated-card {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading effect */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 6px;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Doctor Badges */
+        .doctor-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-right: 5px;
+        }
+
+        .badge-verified {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .badge-top-rated {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+
+        /* Map section */
+        .map-container {
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Video consultation promo */
+        .video-consultation {
+            background: url('https://source.unsplash.com/random/1200x800/?telemedicine') center/cover;
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            margin: 60px 0;
+        }
+
+        .video-consultation:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.7));
+        }
+
+        .video-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .specialty-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .specialty-card.active {
+            border: 2px solid var(--primary);
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        .specialty-card:hover .specialty-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .specialty-card.active .specialty-icon {
+            background-color: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" data-aos="fade-down">
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-bold" href="#">
+                <i class="fa-solid fa-handshake-angle me-2"></i>XpertLink
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#sectors">Sectors</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center " href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Sectors <i class="fa-solid fa-chevron-down ms-2"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#sectors">
+                                    <i class="fa-solid fa-layer-group me-2"></i> Key Sectors
+                                </a></li>
+                            <li><a class="dropdown-item" href="index.html#services">
+                                    <i class="fa-solid fa-briefcase me-2"></i> Services
+                                </a></li>
+                            <li><a class="dropdown-item" href="index.html#overview">
+                                    <i class="fa-solid fa-chart-pie me-2"></i> Overview
+                                </a></li>
+                            <li><a class="dropdown-item" href="index.html#cta">
+                                    <i class="fa-solid fa-bullhorn me-2"></i> Call-to-Action
+                                </a></li>
+                            <li><a class="dropdown-item" href="index.html#statistics">
+                                    <i class="fa-solid fa-chart-line me-2"></i> Statistics
+                                </a></li>
+                        </ul>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#experts">Experts</a>
+                    </li> -->
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Experts <i class="fa-solid fa-chevron-down ms-2"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#experts">
+                                    <i class="fa-solid fa-star me-2"></i> Featured
+                                </a></li>
+                            <li><a class="dropdown-item" href="healthcare-experts.html">
+                                    <i class="fa-solid fa-heart-pulse me-2"></i> Healthcare
+                                </a></li>
+                            <li><a class="dropdown-item" href="legal-experts.html">
+                                    <i class="fa-solid fa-scale-balanced me-2"></i> Legal
+                                </a></li>
+                            <li><a class="dropdown-item" href="education-experts.html">
+                                    <i class="fa-solid fa-graduation-cap me-2"></i> Education
+                                </a></li>
+                            <li><a class="dropdown-item" href="finance-experts.html">
+                                    <i class="fa-solid fa-coins me-2"></i> Finance
+                                </a></li>
+                            <li><a class="dropdown-item" href="technology-experts.html">
+                                    <i class="fa-solid fa-microchip me-2"></i> Technology
+                                </a></li>
+                            <li><a class="dropdown-item" href="entrepreneurship-experts.html">
+                                    <i class="fa-solid fa-lightbulb me-2"></i> Entrepreneurship
+                                </a></li>
+                        </ul>
+
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#insights">Insights</a>
+                    </li>
+                    <li class="nav-
+                    item">
+                        <a class="nav-link" href="index.html#footer">Contact</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-outline-light btn-sm mt-1" href="index.html#login">
+                            <i class="fa-solid fa-arrow-right-to-bracket me-1"></i>Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero-section" data-aos="fade-down">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <h1 class="fw-bold mb-4">Nepal's Top Medical Experts</h1>
+                    <p class="mb-4">Connect with leading healthcare professionals from Nepal's most respected hospitals
+                        and clinics. Book appointments, consult online, and get the care you deserve.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#doctorsSection" class="btn btn-light px-4">Find a Doctor</a>
+                        <a href="#" class="btn btn-outline-light px-4">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <img src="/assets/images/healthcare/1.jpg" alt="Doctors"
+                        class="img-fluid rounded-4 shadow d-none d-lg-block">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section" data-aos="fade-up" data-aos-delay="300">
+        <div class="container">
+            <div class="search-filter-card">
+                <div class="row">
+                    <div class="col-lg-4 mb-3 mb-lg-0">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0">
+                                <i class="fas fa-search text-muted"></i>
+                            </span>
+                            <input type="text" id="searchDoctors" class="form-control border-start-0"
+                                placeholder="Search by name, specialty, or hospital...">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-3 mb-lg-0">
+                        <select id="filterSpecialty" class="form-select">
+                            <option value="">All Specialties</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Gynecology">Gynecology</option>
+                            <option value="Ophthalmology">Ophthalmology</option>
+                            
+                        </select>
+                    </div>
+                    <div class="col-lg-3 mb-3 mb-lg-0">
+                        <select id="filterAvailability" class="form-select">
+                            <option value="">All Availability</option>
+                            <option value="Available Today">Available Today</option>
+                            <option value="Available This Week">Available This Week</option>
+                            <option value="Video Consultation">Video Consultation</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <button id="applyFilters" class="btn btn-primary w-100">
+                            <i class="fas fa-filter me-2"></i>Apply Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Specialties -->
+    <section class="mt-5 py-4">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">Browse by Specialty</h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="specialty-card text-center h-100">
+                        <div class="specialty-icon mx-auto">
+                            <i class="fas fa-heartbeat fa-lg"></i>
+                        </div>
+                        <h6 class="mb-2">Cardiology</h6>
+                        <p class="small text-muted mb-0">Heart specialists</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="specialty-card text-center h-100">
+                        <div class="specialty-icon mx-auto">
+                            <i class="fas fa-brain fa-lg"></i>
+                        </div>
+                        <h6 class="mb-2">Neurology</h6>
+                        <p class="small text-muted mb-0">Brain specialists</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="specialty-card text-center h-100">
+                        <div class="specialty-icon mx-auto">
+                            <i class="fas fa-bone fa-lg"></i>
+                        </div>
+                        <h6 class="mb-2">Orthopedics</h6>
+                        <p class="small text-muted mb-0">Bone specialists</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="specialty-card text-center h-100">
+                        <div class="specialty-icon mx-auto">
+                            <i class="fas fa-child fa-lg"></i>
+                        </div>
+                        <h6 class="mb-2">Pediatrics</h6>
+                        <p class="small text-muted mb-0">Child specialists</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="specialty-card text-center h-100">
+                        <div class="specialty-icon mx-auto">
+                            <i class="fas fa-venus fa-lg"></i>
+                        </div>
+                        <h6 class="mb-2">Gynecology</h6>
+                        <p class="small text-muted mb-0">Women's health</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="600">
+                    <div class="specialty-card text-center h-100">
+                        <div class="specialty-icon mx-auto">
+                            <i class="fas fa-eye fa-lg"></i>
+                        </div>
+                        <h6 class="mb-2">Ophthalmology</h6>
+                        <p class="small text-muted mb-0">Eye specialists</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctorsSection" class="py-5">
+        <div class="container">
+            <h2 class="section-title mb-5" data-aos="fade-right">Our Medical Experts</h2>
+            <div class="row g-4" id="doctorsContainer">
+                <!-- Dynamically populated doctors will appear here -->
+            </div>
+
+            <!-- Loading placeholders -->
+            <div id="loadingPlaceholders" class="row g-4">
+                <div class="col-sm-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 doctor-card">
+                        <div class="skeleton" style="height: 200px;"></div>
+                        <div class="card-body">
+                            <div class="skeleton" style="height: 24px; width: 80%; margin-bottom: 10px;"></div>
+                            <div class="skeleton" style="height: 18px; width: 60%; margin-bottom: 10px;"></div>
+                            <div class="skeleton" style="height: 16px; width: 90%; margin-bottom: 10px;"></div>
+                            <div class="doctor-stats">
+                                <div class="skeleton" style="height: 16px; width: 30%;"></div>
+                                <div class="skeleton" style="height: 16px; width: 30%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <div class="skeleton" style="height: 40px; width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat placeholder for a cleaner loading experience -->
+            </div>
+
+            <!-- Show more button -->
+            <div class="text-center mt-5" data-aos="fade-up">
+                <button id="loadMoreBtn" class="btn btn-outline-primary px-4">
+                    <i class="fas fa-plus-circle me-2"></i>Load More Doctors
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Consultation Promo -->
+    <section class="video-consultation" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 video-content">
+                    <h2 class="mb-3">Video Consultations Available</h2>
+                    <p class="mb-4">Can't visit in person? Connect with our medical experts through secure video
+                        consultations from the comfort of your home. Same quality care, more convenience.</p>
+                    <a href="#" class="btn btn-light px-4">Book Video Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Doctors -->
+    <section class="featured-doctors">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Top Rated Medical Experts</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 doctor-card">
+                        <div class="doctor-img-container">
+                            <img src="/assets/images/healthcare/2.jpg" class="doctor-img" alt="Dr. Rajesh Sharma">
+                            <div class="doctor-availability">Available Today</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <h5 class="card-title mb-0">Dr. Rajesh Sharma</h5>
+                                <span class="badge-rating ms-auto">4.9</span>
+                            </div>
+                            <p class="doctor-specialty">Cardiology</p>
+                            <p class="doctor-hospital"><i class="fas fa-hospital me-1"></i> Bir Hospital, Kathmandu</p>
+                            <div>
+                                <span class="doctor-badge badge-verified"><i class="fas fa-check-circle me-1"></i>
+                                    Verified</span>
+                                <span class="doctor-badge badge-top-rated"><i class="fas fa-award me-1"></i> Top
+                                    Rated</span>
+                            </div>
+                            <div class="doctor-stats">
+                                <div class="doctor-stat">
+                                    <i class="fas fa-user-md me-1 text-primary"></i> 15+ Years
+                                </div>
+                                <div class="doctor-stat">
+                                    <i class="fas fa-users me-1 text-primary"></i> 2000+ Patients
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <div class="doctor-actions">
+                                <button class="btn btn-primary doctor-action-btn" data-bs-toggle="modal"
+                                    data-bs-target="#doctorDetailModal">
+                                    Book Now
+                                </button>
+                                <button class="btn btn-outline-primary doctor-action-btn">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 doctor-card">
+                        <div class="doctor-img-container">
+                            <img src="/assets/images/healthcare/3.jpg" class="doctor-img" alt="Dr. Sunita Rai">
+                            <div class="doctor-availability">Video Available</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <h5 class="card-title mb-0">Dr. Sunita Rai</h5>
+                                <span class="badge-rating ms-auto">4.8</span>
+                            </div>
+                            <p class="doctor-specialty">Gynecology</p>
+                            <p class="doctor-hospital"><i class="fas fa-hospital me-1"></i> Patan Hospital, Lalitpur</p>
+                            <div>
+                                <span class="doctor-badge badge-verified"><i class="fas fa-check-circle me-1"></i>
+                                    Verified</span>
+                                <span class="doctor-badge badge-top-rated"><i class="fas fa-award me-1"></i> Top
+                                    Rated</span>
+                            </div>
+                            <div class="doctor-stats">
+                                <div class="doctor-stat">
+                                    <i class="fas fa-user-md me-1 text-primary"></i> 12+ Years
+                                </div>
+                                <div class="doctor-stat">
+                                    <i class="fas fa-users me-1 text-primary"></i> 1800+ Patients
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <div class="doctor-actions">
+                                <button class="btn btn-primary doctor-action-btn" data-bs-toggle="modal"
+                                    data-bs-target="#doctorDetailModal">
+                                    Book Now
+                                </button>
+                                <button class="btn btn-outline-primary doctor-action-btn">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 doctor-card">
+                        <div class="doctor-img-container">
+                            <img src="/assets/images/healthcare/4.jpg" class="doctor-img" alt="Dr. Anup Gurung">
+                            <div class="doctor-availability">Available Tomorrow</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <h5 class="card-title mb-0">Dr. Anup Gurung</h5>
+                                <span class="badge-rating ms-auto">4.7</span>
+                            </div>
+                            <p class="doctor-specialty">Neurology</p>
+                            <p class="doctor-hospital"><i class="fas fa-hospital me-1"></i> Teaching Hospital, Kathmandu
+                            </p>
+                            <div>
+                                <span class="doctor-badge badge-verified"><i class="fas fa-check-circle me-1"></i>
+                                    Verified</span>
+                            </div>
+                            <div class="doctor-stats">
+                                <div class="doctor-stat">
+                                    <i class="fas fa-user-md me-1 text-primary"></i> 10+ Years
+                                </div>
+                                <div class="doctor-stat">
+                                    <i class="fas fa-users me-1 text-primary"></i> 1500+ Patients
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <div class="doctor-actions">
+                                <button class="btn btn-primary doctor-action-btn" data-bs-toggle="modal"
+                                    data-bs-target="#doctorDetailModal">
+                                    Book Now
+                                </button>
+                                <button class="btn btn-outline-primary doctor-action-btn">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title">Find Doctors Near You</h2>
+                    <p class="mb-4">Explore medical experts in your area. Our network includes specialists from all
+                        major hospitals and clinics across Nepal.</p>
+                    <div class="mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="locationInput"
+                                placeholder="Enter your location">
+                            <label for="locationInput">Enter your location</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary px-4">
+                        <i class="fas fa-map-marker-alt me-2"></i>Find Nearby Doctors
+                    </button>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="map-container">
+                        <!-- Map will be embedded here -->
+                        <img src="/assets/images/healthcare/10.png" alt="Map" class="img-fluid w-100 h-100"
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor Detail Modal -->
+    <div class="modal fade" id="doctorDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-doctor-content">
+                <div class="modal-header modal-doctor-header">
+                    <h5 class="modal-title">Doctor Profile</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-doctor-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/assets/images/healthcare/2.jpg" class="doctor-profile-img" alt="Doctor">
+                            <div class="doctor-profile-actions">
+                                <button class="btn btn-primary w-100">
+                                    <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                                </button>
+                                <button class="btn btn-outline-primary w-100">
+                                    <i class="fas fa-video me-2"></i>Video Consultation
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 id="modalDoctorName">Dr. Sample Name</h4>
+                            <p class="doctor-specialty" id="modalDoctorSpecialty">Specialty</p>
+                            <p class="doctor-hospital" id="modalDoctorHospital">Hospital Name</p>
+
+                            <div class="doctor-profile-section">
+                                <h6><i class="fas fa-calendar-alt me-2"></i>Available Schedule</h6>
+                                <div class="doctor-schedule" id="modalDoctorSchedule">
+                                </div>
+                            </div>
+
+                            <div class="doctor-profile-section">
+                                <h6><i class="fas fa-user-md me-2"></i>Experience</h6>
+                                <p>15+ years of experience in treating patients with various cardiac conditions.</p>
+                            </div>
+
+                            <div class="doctor-profile-section">
+                                <h6><i class="fas fa-graduation-cap me-2"></i>Education</h6>
+                                <p>MBBS - Tribhuvan University<br>
+                                    MD Cardiology - All India Institute of Medical Sciences<br>
+                                    Fellowship - Johns Hopkins University, USA</p>
+                            </div>
+
+                            <div class="doctor-profile-section">
+                                <h6><i class="fas fa-star me-2"></i>Reviews</h6>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div>
+                                        <span class="badge-rating me-2">4.9</span>
+                                        <span class="text-muted">(128 reviews)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-5">
+        <div class="container" id="footer">
+            <div class="row g-5">
+                <!-- About Section -->
+                <div class="col-lg-4">
+                    <h5>About XpertLink</h5>
+                    <p>Nepal's premier expert network connecting professionals with businesses, fostering collaboration
+                        and innovation.</p>
+                </div>
+
+                <!-- Sectors -->
+                <div class="col-lg-2">
+                    <h5>Sectors</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#healthcare" class="text-white">Healthcare</a></li>
+                        <li><a href="index.html#legal" class="text-white">Legal Services</a></li>
+                        <li><a href="index.html#education" class="text-white">Education</a></li>
+                        <li><a href="index.html#finance" class="text-white">Finance</a></li>
+                        <li><a href="index.html#technology" class="text-white">Technology</a></li>
+                        <li><a href="index.html#entrepreneurship" class="text-white">Entrepreneurship</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="index.html#sectors" class="text-white">Sectors</a></li>
+                        <li><a href="index.html#experts" class="text-white">Experts</a></li>
+                        <li><a href="index.html#testimonials" class="text-white">Testimonials</a></li>
+                        <li><a href="index.html#insights" class="text-white">Insights</a></li>
+                        <li><a href="index.html#footer" class="text-white">Contact</a></li>
+                        <!-- <li><a href="#" class="text-white">FAQs</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:info@xpertlink.com" class="text-white">info@xpertlink.com</a></p>
+                    <p>Phone: <a href="tel:+977-1234567890" class="text-white">+977-1234567890</a></p>
+                    <p>Address: Kathmandu, Nepal</p>
+
+                    <!-- Social Media Links -->
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center mt-4 p-4">
+                <p class="mb-0">&copy; 2025 XpertLink. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="./js/app.js"></script>
+
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Sample doctor data
+        const doctors = [
+            {
+                id: 1,
+                name: "Dr. Rajesh Sharma",
+                specialty: "Cardiology",
+                hospital: "Bir Hospital, Kathmandu",
+                rating: 4.9,
+                experience: "15+ Years",
+                patients: "2000+ Patients",
+                availability: "Available Today",
+                image: "/assets/images/healthcare/2.jpg",
+                verified: true,
+                topRated: true,
+                videoAvailable: true
+            },
+            {
+                id: 2,
+                name: "Dr. Sunita Rai",
+                specialty: "Gynecology",
+                hospital: "Patan Hospital, Lalitpur",
+                rating: 4.8,
+                experience: "12+ Years",
+                patients: "1800+ Patients",
+                availability: "Video Available",
+                image: "/assets/images/healthcare/3.jpg",
+                verified: true,
+                topRated: true,
+                videoAvailable: true
+            },
+            {
+                id: 3,
+                name: "Dr. Anup Gurung",
+                specialty: "Neurology",
+                hospital: "Teaching Hospital, Kathmandu",
+                rating: 4.7,
+                experience: "10+ Years",
+                patients: "1500+ Patients",
+                availability: "Available Tomorrow",
+                image: "/assets/images/healthcare/4.jpg",
+                verified: true,
+                topRated: false,
+                videoAvailable: true
+            },
+            {
+                id: 4,
+                name: "Dr. Meera Tamang",
+                specialty: "Pediatrics",
+                hospital: "Kanti Children's Hospital, Kathmandu",
+                rating: 4.9,
+                experience: "14+ Years",
+                patients: "2200+ Patients",
+                availability: "Available Today",
+                image: "/assets/images/healthcare/5.jpg",
+                verified: true,
+                topRated: true,
+                videoAvailable: false
+            },
+            {
+                id: 5,
+                name: "Dr. Deepak Karki",
+                specialty: "Orthopedics",
+                hospital: "Civil Hospital, Kathmandu",
+                rating: 4.6,
+                experience: "8+ Years",
+                patients: "1200+ Patients",
+                availability: "Available This Week",
+                image: "/assets/images/healthcare/6.jpg",
+                verified: true,
+                topRated: false,
+                videoAvailable: true
+            },
+            {
+                id: 6,
+                name: "Dr. Nisha Thapa",
+                specialty: "Dermatology",
+                hospital: "Nepal Medical College, Kathmandu",
+                rating: 4.7,
+                experience: "9+ Years",
+                patients: "1600+ Patients",
+                availability: "Video Available",
+                image: "/assets/images/healthcare/7.jpg",
+                verified: true,
+                topRated: false,
+                videoAvailable: true
+            },
+            {
+                id: 7,
+                name: "Dr. Sunil Poudel",
+                specialty: "Psychiatry",
+                hospital: "Mental Hospital, Lagankhel",
+                rating: 4.8,
+                experience: "11+ Years",
+                patients: "1400+ Patients",
+                availability: "Available Tomorrow",
+                image: "/assets/images/healthcare/8.jpg",
+                verified: true,
+                topRated: false,
+                videoAvailable: true
+            },
+            {
+                id: 8,
+                name: "Dr. Prabha Neupane",
+                specialty: "Cardiology",
+                hospital: "Norvic Hospital, Kathmandu",
+                rating: 4.5,
+                experience: "7+ Years",
+                patients: "900+ Patients",
+                availability: "Available This Week",
+                image: "/assets/images/healthcare/9.jpg",
+                verified: true,
+                topRated: false,
+                videoAvailable: false
+            }
+        ];
+
+        // Function to populate doctors
+        function populateDoctors(doctorList) {
+            const doctorsContainer = document.getElementById('doctorsContainer');
+            doctorsContainer.innerHTML = '';
+
+            doctorList.forEach((doctor, index) => {
+                const doctorCard = document.createElement('div');
+                doctorCard.className = 'col-sm-6 col-lg-4 col-xl-3 animated-card';
+                doctorCard.style.animationDelay = `${index * 0.1}s`;
+
+                let badgesHTML = '';
+                if (doctor.verified) {
+                    badgesHTML += `<span class="doctor-badge badge-verified"><i class="fas fa-check-circle me-1"></i> Verified</span>`;
+                }
+                if (doctor.topRated) {
+                    badgesHTML += `<span class="doctor-badge badge-top-rated"><i class="fas fa-award me-1"></i> Top Rated</span>`;
+                }
+
+                doctorCard.innerHTML = `
+                    <div class="card h-100 doctor-card">
+                        <div class="doctor-img-container">
+                            <img src="${doctor.image}" class="doctor-img" alt="${doctor.name}">
+                            <div class="doctor-availability">${doctor.availability}</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <h5 class="card-title mb-0">${doctor.name}</h5>
+                                <span class="badge-rating ms-auto">${doctor.rating}</span>
+                            </div>
+                            <p class="doctor-specialty">${doctor.specialty}</p>
+                            <p class="doctor-hospital"><i class="fas fa-hospital me-1"></i> ${doctor.hospital}</p>
+                            <div>${badgesHTML}</div>
+                            <div class="doctor-stats">
+                                <div class="doctor-stat">
+                                    <i class="fas fa-user-md me-1 text-primary"></i> ${doctor.experience}
+                                </div>
+                                <div class="doctor-stat">
+                                    <i class="fas fa-users me-1 text-primary"></i> ${doctor.patients}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0">
+                            <div class="doctor-actions">
+                                <button class="btn btn-primary doctor-action-btn" data-bs-toggle="modal" data-bs-target="#doctorDetailModal" onclick="openDoctorModal(${doctor.id})">
+                                    Book Now
+                                </button>
+                                <button class="btn btn-outline-primary doctor-action-btn" ${doctor.videoAvailable ? '' : 'disabled'}>
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                doctorsContainer.appendChild(doctorCard);
+            });
+        }
+
+        // Function to open doctor modal with details
+        function openDoctorModal(doctorId) {
+            const doctor = doctors.find(d => d.id === doctorId);
+
+            if (doctor) {
+                // Update basic info
+                document.getElementById('modalDoctorName').textContent = doctor.name;
+                document.getElementById('modalDoctorSpecialty').textContent = doctor.specialty;
+                document.getElementById('modalDoctorHospital').textContent = doctor.hospital;
+
+                // Update image
+                const doctorImage = document.querySelector('.doctor-profile-img');
+                doctorImage.src = doctor.image;
+                doctorImage.alt = doctor.name;
+
+                // Update schedule
+                const scheduleContainer = document.getElementById('modalDoctorSchedule');
+                scheduleContainer.innerHTML = doctor.schedule
+                    .map(time => `<div class="schedule-slot"><i class="fas fa-clock"></i>${time}</div>`)
+                    .join('');
+
+                // Update experience and education
+                document.getElementById('modalDoctorExperience').textContent = doctor.experienceDetails;
+                document.getElementById('modalDoctorEducation').textContent = doctor.education;
+
+                // Update reviews
+                const reviewsElement = document.querySelector('.doctor-profile-section:nth-of-type(4) .text-muted');
+                reviewsElement.textContent = `(${Math.floor(doctor.rating * 100)} reviews)`;
+            }
+        }
+
+        // Simulate loading data
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hide loading placeholders
+            document.getElementById('loadingPlaceholders').style.display = 'none';
+
+            // Show doctors
+            populateDoctors(doctors);
+
+            // Filter functionality
+            document.getElementById('applyFilters').addEventListener('click', function () {
+                const specialty = document.getElementById('filterSpecialty').value;
+
+                // Remove active class from all cards
+                document.querySelectorAll('.specialty-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+
+                // Add active class to matching card
+                if (specialty) {
+                    document.querySelectorAll('.specialty-card').forEach(card => {
+                        if (card.querySelector('h6').textContent.trim() === specialty) {
+                            card.classList.add('active');
+                        }
+                    });
+                }
+                const searchText = document.getElementById('searchDoctors').value.toLowerCase();
+                const availability = document.getElementById('filterAvailability').value;
+
+                const filteredDoctors = doctors.filter(doctor => {
+                    const matchesSearch = searchText === '' ||
+                        doctor.name.toLowerCase().includes(searchText) ||
+                        doctor.specialty.toLowerCase().includes(searchText) ||
+                        doctor.hospital.toLowerCase().includes(searchText);
+
+                    const matchesSpecialty = specialty === '' || doctor.specialty === specialty;
+                    const matchesAvailability = availability === '' || doctor.availability.includes(availability);
+
+                    return matchesSearch && matchesSpecialty && matchesAvailability;
+                });
+
+                populateDoctors(filteredDoctors);
+            });
+
+            // Load more button (simulate pagination)
+            document.getElementById('loadMoreBtn').addEventListener('click', function () {
+                // This would normally load the next page of results
+                // For demo, we'll just show a message
+                this.textContent = 'No more doctors to load';
+                this.disabled = true;
+                setTimeout(() => {
+                    this.textContent = 'Load More Doctors';
+                    this.disabled = false;
+                }, 3000);
+            });
+        });
+
+        // Add click event to specialty cards
+        document.querySelectorAll('.specialty-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const specialtyName = this.querySelector('h6').textContent.trim();
+                document.getElementById('filterSpecialty').value = specialtyName;
+                document.getElementById('applyFilters').click();
+            });
+        });
+    </script>
+</body>
+
+</html>

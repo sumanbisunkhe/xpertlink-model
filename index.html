@@ -29,8 +29,7 @@
 
 <body class="bg-light">
 
-    <!-- Animated Navigation -->
-    <!-- Updated Navbar Section -->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" data-aos="fade-down">
         <div class="container">
             <a class="navbar-brand fs-3 fw-bold" href="#">
@@ -42,38 +41,73 @@
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="sectorsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Sectors
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="sectorsDropdown">
-                            <li><a class="dropdown-item" href="#healthcare">
-                                    <i class="fa-solid fa-heart-pulse me-2"></i>Healthcare
-                                </a></li>
-                            <li><a class="dropdown-item" href="#legal">
-                                    <i class="fa-solid fa-scale-balanced me-2"></i>Legal
-                                </a></li>
-                            <li><a class="dropdown-item" href="#education">
-                                    <i class="fa-solid fa-book me-2"></i>Education
-                                </a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#sectors">
-                                    <i class="fa-solid fa-industry me-2"></i>All Sectors
-                                </a></li>
-                        </ul>
-                    </li> -->
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#sectors">Sectors</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center " href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Sectors <i class="fa-solid fa-chevron-down ms-2"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#sectors">
+                                    <i class="fa-solid fa-layer-group me-2"></i> Key Sectors
+                                </a></li>
+                            <li><a class="dropdown-item" href="#services">
+                                    <i class="fa-solid fa-briefcase me-2"></i> Services
+                                </a></li>
+                            <li><a class="dropdown-item" href="#overview">
+                                    <i class="fa-solid fa-chart-pie me-2"></i> Overview
+                                </a></li>
+                            <li><a class="dropdown-item" href="#cta">
+                                    <i class="fa-solid fa-bullhorn me-2"></i> Call-to-Action
+                                </a></li>
+                            <li><a class="dropdown-item" href="#statistics">
+                                    <i class="fa-solid fa-chart-line me-2"></i> Statistics
+                                </a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
+
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#experts">Experts</a>
+                    </li> -->
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Experts <i class="fa-solid fa-chevron-down ms-2"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#experts">
+                                    <i class="fa-solid fa-star me-2"></i> Featured
+                                </a></li>
+                            <li><a class="dropdown-item" href="healthcare-experts.html">
+                                    <i class="fa-solid fa-heart-pulse me-2"></i> Healthcare
+                                </a></li>
+                            <li><a class="dropdown-item" href="legal-experts.html">
+                                    <i class="fa-solid fa-scale-balanced me-2"></i> Legal
+                                </a></li>
+                            <li><a class="dropdown-item" href="education-experts.html">
+                                    <i class="fa-solid fa-graduation-cap me-2"></i> Education
+                                </a></li>
+                            <li><a class="dropdown-item" href="finance-experts.html">
+                                    <i class="fa-solid fa-coins me-2"></i> Finance
+                                </a></li>
+                            <li><a class="dropdown-item" href="technology-experts.html">
+                                    <i class="fa-solid fa-microchip me-2"></i> Technology
+                                </a></li>
+                            <li><a class="dropdown-item" href="entrepreneurship-experts.html">
+                                    <i class="fa-solid fa-lightbulb me-2"></i> Entrepreneurship
+                                </a></li>
+                        </ul>
+
                     </li>
+
+
                     <li class="nav-item">
                         <a class="nav-link" href="#testimonials">Testimonials</a>
                     </li>
@@ -81,7 +115,7 @@
                         <a class="nav-link" href="#insights">Insights</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#footer">Contact</a>
                     </li>
                     <li class="nav-item ms-2">
                         <a class="btn btn-outline-light btn-sm mt-1" href="#login">
@@ -813,208 +847,6 @@
         </div>
     </section>
 
-    <!-- Featured Experts Carousel -->
-    <section class="py-7 bg-gradient-primary" id="experts">
-        <div class="container">
-            <div class="row mb-5" data-aos="fade-up">
-                <div class="col-12 text-center">
-                    <h2 class="display-4 display-md-3 display-lg-5 fw-bold text-white text-center py-3 fs-2">Featured
-                        Experts
-                    </h2>
-                </div>
-            </div>
-            <div class="swiper featured-experts">
-                <div class="swiper-wrapper">
-                    <!-- Expert Slides -->
-                    <!-- Healthcare Experts -->
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/1.jpg" class="card-img-top" alt="Dr. Rajesh">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Dr. Rajesh Thapa</h5>
-                                <p class="text-muted small mb-2">Senior Cardiologist</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.9 (128 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/2.jpg" class="card-img-top" alt="Dr. Neha">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Dr. Neha Sharma</h5>
-                                <p class="text-muted small mb-2">Leading Pediatrician</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.8 (112 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Legal Experts -->
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/3.jpg" class="card-img-top" alt="Advocate Anand">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Advocate Anand Mehta</h5>
-                                <p class="text-muted small mb-2">Corporate Lawyer</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.7 (95 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/4.jpg" class="card-img-top" alt="Judge Kavita">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Judge Kavita Rao</h5>
-                                <p class="text-muted small mb-2">Human Rights Specialist</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.9 (110 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Education Experts -->
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/5.jpg" class="card-img-top" alt="Prof. Arjun">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Prof. Arjun Khanna</h5>
-                                <p class="text-muted small mb-2">Education Policy Expert</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.8 (89 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Finance Experts -->
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/6.jpg" class="card-img-top" alt="CA Sumit">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">CA Sumit Agarwal</h5>
-                                <p class="text-muted small mb-2">Taxation & Audit Consultant</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.9 (132 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/7.jpg" class="card-img-top" alt="Fintech Rina">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Rina Desai</h5>
-                                <p class="text-muted small mb-2">Fintech Investment Strategist</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.7 (120 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Technology Experts -->
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/8.jpg" class="card-img-top" alt="AI Rohit">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Rohit Saxena</h5>
-                                <p class="text-muted small mb-2">AI & Machine Learning Expert</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.9 (140 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Entrepreneurship Experts -->
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/9.jpg" class="card-img-top" alt="Startup Meera">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Meera Kapoor</h5>
-                                <p class="text-muted small mb-2">Startup Growth Mentor</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.8 (110 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card expert-card border-0 shadow-lg">
-                            <img src="./assets/images/experts/10.jpg" class="card-img-top" alt="Venture Anil">
-                            <div class="card-body">
-                                <h5 class="fw-bold mb-1">Anil Deshmukh</h5>
-                                <p class="text-muted small mb-2">Venture Capital Advisor</p>
-                                <div class="rating mb-3">
-                                    <i class="fa-solid fa-star text-warning"></i>
-                                    4.9 (115 reviews)
-                                </div>
-                                <div class="d-grid">
-                                    <a href="#" class="btn btn-primary">View Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Navigation Buttons -->
-
-
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-
-
-
-        </div>
-    </section>
-
 
     <!-- Sector-Specific Value Propositions -->
     <section class="py-7" id="services">
@@ -1235,7 +1067,7 @@
 
     <!-- Interactive Sector Comparison -->
     <section class="py-7 bg-light">
-        <div class="container">
+        <div class="container" id="overview">
             <div class="row">
                 <div class="col-12" data-aos="fade-up">
                     <h2 class="display-5 fw-bold text-center mb-5">Sector Overview</h2>
@@ -1345,9 +1177,9 @@
     </section>
 
     <!-- Sector-Specific CTAs -->
-    <div class="container py-5" id="cta">
+    <div class="container py-4" id="cta">
         <div class="row g-4">
-            <h2 class="display-5 fw-bold text-center mb-5">Call-in-Action</h2>
+            <h2 class="display-5 fw-bold text-center mb-5">Call-to-Action</h2>
 
             <!-- Healthcare CTA -->
             <div class="col-md-6 col-lg-4" data-aos="flip-left">
@@ -1413,9 +1245,10 @@
     </div>
 
 
+
     <!-- Expert Statistics Counter -->
     <section class="py-7 bg-dark text-white">
-        <div class="container">
+        <div class="container" id="statistics">
             <div class="row text-center g-4">
                 <div class="col-md-3">
                     <div class="counter-item">
@@ -1445,6 +1278,211 @@
         </div>
     </section>
 
+    <!-- Featured Experts Carousel -->
+    <section class="py-7 bg-gradient-primary" id="experts">
+        <div class="container">
+            <div class="row mb-5" data-aos="fade-up">
+                <div class="col-12 text-center">
+                    <h2 class="display-4 display-md-3 display-lg-5 fw-bold text-white text-center py-3 fs-2">Featured
+                        Experts
+                    </h2>
+                </div>
+            </div>
+            <div class="swiper featured-experts">
+                <div class="swiper-wrapper">
+                    <!-- Expert Slides -->
+                    <!-- Healthcare Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/1.jpg" class="card-img-top" alt="Dr. Rajesh">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Dr. Rajesh Thapa</h5>
+                                <p class="text-muted small mb-2">Senior Cardiologist</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (128 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/2.jpg" class="card-img-top" alt="Dr. Neha">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Dr. Neha Sharma</h5>
+                                <p class="text-muted small mb-2">Leading Pediatrician</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.8 (112 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legal Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/3.jpg" class="card-img-top" alt="Advocate Anand">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Advocate Anand Mehta</h5>
+                                <p class="text-muted small mb-2">Corporate Lawyer</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.7 (95 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/4.jpg" class="card-img-top" alt="Judge Kavita">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Judge Kavita Rao</h5>
+                                <p class="text-muted small mb-2">Human Rights Specialist</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (110 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/5.jpg" class="card-img-top" alt="Prof. Arjun">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Prof. Arjun Khanna</h5>
+                                <p class="text-muted small mb-2">Education Policy Expert</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.8 (89 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Finance Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/6.jpg" class="card-img-top" alt="CA Sumit">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">CA Sumit Agarwal</h5>
+                                <p class="text-muted small mb-2">Taxation & Audit Consultant</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (132 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/7.jpg" class="card-img-top" alt="Fintech Rina">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Rina Desai</h5>
+                                <p class="text-muted small mb-2">Fintech Investment Strategist</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.7 (120 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technology Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/8.jpg" class="card-img-top" alt="AI Rohit">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Rohit Saxena</h5>
+                                <p class="text-muted small mb-2">AI & Machine Learning Expert</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (140 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entrepreneurship Experts -->
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/9.jpg" class="card-img-top" alt="Startup Meera">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Meera Kapoor</h5>
+                                <p class="text-muted small mb-2">Startup Growth Mentor</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.8 (110 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card expert-card border-0 shadow-lg">
+                            <img src="./assets/images/experts/10.jpg" class="card-img-top" alt="Venture Anil">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1">Anil Deshmukh</h5>
+                                <p class="text-muted small mb-2">Venture Capital Advisor</p>
+                                <div class="rating mb-3">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    4.9 (115 reviews)
+                                </div>
+                                <div class="d-grid">
+                                    <a href="#" class="btn btn-primary">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Buttons -->
+
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+
 
     <!-- Testimonial Section -->
     <section class="py-7">
@@ -1463,7 +1501,10 @@
                                         <small class="text-muted">Entrepreneur</small>
                                     </div>
                                 </div>
-                                <p class="mb-0">XpertLink transformed my business strategy Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt commodi repudiandae ullam dignissimos ducimus similique sed quisquam soluta officiis, consequatur eum cum dolor amet odit repellat necessitatibus libero unde pariatur.</p>
+                                <p class="mb-0">XpertLink transformed my business strategy Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit. Nesciunt commodi repudiandae ullam dignissimos ducimus
+                                    similique sed quisquam soluta officiis, consequatur eum cum dolor amet odit repellat
+                                    necessitatibus libero unde pariatur.</p>
                             </div>
                         </div>
                     </div>
@@ -1478,7 +1519,10 @@
                                         <small class="text-muted">Marketing Director</small>
                                     </div>
                                 </div>
-                                <p class="mb-0">The insights from XpertLink helped us increase engagement by 40% Lorem ipsum dolor sit amet elit. Incidunt repudiandae et iste ad doloribus nesciunt aperiam ipsa sed voluptatem nemo, debitis necessitatibus asperiores corrupti quam? Reprehenderit, voluptate aspernatur.</p>
+                                <p class="mb-0">The insights from XpertLink helped us increase engagement by 40% Lorem
+                                    ipsum dolor sit amet elit. Incidunt repudiandae et iste ad doloribus nesciunt
+                                    aperiam ipsa sed voluptatem nemo, debitis necessitatibus asperiores corrupti quam?
+                                    Reprehenderit, voluptate aspernatur.</p>
                             </div>
                         </div>
                     </div>
@@ -1493,7 +1537,10 @@
                                         <small class="text-muted">Software Engineer</small>
                                     </div>
                                 </div>
-                                <p class="mb-0">I love how intuitive and user-friendly the platform is Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda unde ad expedita, repellendus quasi vitae et explicabo laboriosam. Consequatur placeat obcaecati tempore, dicta architecto ducimus ad corporis unde hic iusto.</p>
+                                <p class="mb-0">I love how intuitive and user-friendly the platform is Lorem ipsum,
+                                    dolor sit amet consectetur adipisicing elit. Assumenda unde ad expedita, repellendus
+                                    quasi vitae et explicabo laboriosam. Consequatur placeat obcaecati tempore, dicta
+                                    architecto ducimus ad corporis unde hic iusto.</p>
                             </div>
                         </div>
                     </div>
@@ -1508,13 +1555,16 @@
                                         <small class="text-muted">Business Consultant</small>
                                     </div>
                                 </div>
-                                <p class="mb-0">XpertLink’s solutions gave our team a competitive edge Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam veniam in corporis assumenda autem, nam similique facere nesciunt dignissimos quibusdam ipsum illum voluptas quasi amet neque ex quas facilis. Accusantium!</p>
+                                <p class="mb-0">XpertLink’s solutions gave our team a competitive edge Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit. Aperiam veniam in corporis assumenda autem,
+                                    nam similique facere nesciunt dignissimos quibusdam ipsum illum voluptas quasi amet
+                                    neque ex quas facilis. Accusantium!</p>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                
+
                 <div class="swiper-pagination"></div>
             </div>
         </div>
@@ -1528,7 +1578,7 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="card blog-card border-0 h-100">
-                        <img src="./assets/images/blog/health-tech.jpg" class="card-img-top">
+                        <img src="./assets/images/blog/1.jpg" class="card-img-top">
                         <div class="card-body">
                             <span class="badge bg-primary">Healthcare</span>
                             <h5 class="mt-3">Advancements in Nepali Healthcare Technology</h5>
@@ -1536,30 +1586,130 @@
                         </div>
                     </div>
                 </div>
-                <!-- Additional blog posts -->
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card blog-card border-0 h-100">
+                        <img src="./assets/images/blog/2.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-secondary">Education</span>
+                            <h5 class="mt-3">AI in Nepali Education: A New Era</h5>
+                            <p class="text-muted">Discover how AI is reshaping the education system...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card blog-card border-0 h-100">
+                        <img src="./assets/images/blog/3.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-success">Entrepreneurship</span>
+                            <h5 class="mt-3">The Rise of Nepal's Startup Ecosystem</h5>
+                            <p class="text-muted">How Nepal is becoming a hub for new businesses...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card blog-card border-0 h-100">
+                        <img src="./assets/images/blog/4.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-warning">Finance</span>
+                            <h5 class="mt-3">Blockchain and the Future of Banking in Nepal</h5>
+                            <p class="text-muted">How blockchain technology is revolutionizing banking...</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="card blog-card border-0 h-100">
+                        <img src="./assets/images/blog/5.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-secondary">E-Commerce</span>
+                            <h5 class="mt-3">E-commerce Boom in Nepal: Opportunities & Challenges</h5>
+                            <p class="text-muted">A deep dive into Nepal’s growing e-commerce sector...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="card blog-card border-0 h-100">
+                        <img src="./assets/images/blog/6.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <span class="badge bg-success">Technology</span>
+                            <h5 class="mt-3">Innovations Driving Nepal’s Tech Industry</h5>
+                            <p class="text-muted">A look at the latest tech advancements in Nepal...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+
     <!-- Footer -->
     <footer class="bg-primary text-white py-5">
-        <div class="container">
+        <div class="container" id="footer">
             <div class="row g-5">
+                <!-- About Section -->
                 <div class="col-lg-4">
                     <h5>About XpertLink</h5>
-                    <p>Nepal's premier expert network connecting professionals...</p>
+                    <p>Nepal's premier expert network connecting professionals with businesses, fostering collaboration
+                        and innovation.</p>
                 </div>
+
+                <!-- Sectors -->
                 <div class="col-lg-2">
                     <h5>Sectors</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Healthcare</a></li>
-                        <!-- Other sectors -->
+                        <li><a href="#healthcare" class="text-white">Healthcare</a></li>
+                        <li><a href="#legal" class="text-white">Legal Services</a></li>
+                        <li><a href="#education" class="text-white">Education</a></li>
+                        <li><a href="#finance" class="text-white">Finance</a></li>
+                        <li><a href="#technology" class="text-white">Technology</a></li>
+                        <li><a href="#entrepreneurship" class="text-white">Entrepreneurship</a></li>
                     </ul>
                 </div>
-                <!-- Additional footer columns -->
+
+                <!-- Quick Links -->
+                <div class="col-lg-2">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#sectors" class="text-white">Sectors</a></li>
+                        <li><a href="#experts" class="text-white">Experts</a></li>
+                        <li><a href="#testimonials" class="text-white">Testimonials</a></li>
+                        <li><a href="#insights" class="text-white">Insights</a></li>
+                        <li><a href="#footer" class="text-white">Contact</a></li>
+                        <!-- <li><a href="#" class="text-white">FAQs</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:info@xpertlink.com" class="text-white">info@xpertlink.com</a></p>
+                    <p>Phone: <a href="tel:+977-1234567890" class="text-white">+977-1234567890</a></p>
+                    <p>Address: Kathmandu, Nepal</p>
+
+                    <!-- Social Media Links -->
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center mt-4 p-4">
+                <p class="mb-0">&copy; 2025 XpertLink. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1676,7 +1826,7 @@
             const testimonialSlider = new Swiper('.testimonial-slider', {
                 slidesPerView: 3,
                 spaceBetween: 20,
-                loop: true,  
+                loop: true,
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev"
@@ -1691,9 +1841,9 @@
                     1200: { slidesPerView: 2 }
                 },
                 autoplay: {
-                    delay: 3000,  
-                    disableOnInteraction: false, 
-                    pauseOnMouseEnter: false, 
+                    delay: 3000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
                 },
                 speed: 800, // Adjust speed of transition
                 observer: true,
